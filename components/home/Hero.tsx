@@ -27,7 +27,7 @@ export function Hero() {
             "radial-gradient(60% 55% at 78% 22%, rgba(200,80,15,0.10), transparent 70%), linear-gradient(180deg, #faf5ef 0%, var(--color-bg) 46%)",
         }}
       />
-      <div className="mx-auto grid min-h-[100svh] max-w-[var(--container-site)] items-center gap-12 px-[var(--gutter)] py-24 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+      <div className="mx-auto grid max-w-[var(--container-site)] items-center gap-10 px-[var(--gutter)] pb-14 pt-28 sm:gap-12 sm:pb-20 sm:pt-32 lg:min-h-[100svh] lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:py-24">
         <LazyMotion features={domAnimation}>
           <m.div
             initial="hidden"
