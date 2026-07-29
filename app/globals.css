@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Design tokens — Yuk Udin marketing
+   Theme: design-spec-website.md (terang, hangat, primary oranye)
+   Structure/copy: marketing-site-blueprint.md
+   ============================================================ */
+
+@theme {
+  /* ---- Surface — krem lembut & tenang (diturunkan biar tidak terlalu cerah) ---- */
+  --color-bg: #f6f3ee;
+  --color-surface: #fcfbf8;
+  --color-surface-alt: #efe9df;
+  --color-surface-ink: #3f1707; /* jeda gelap yang lebih dalam & kalem */
+
+  /* ---- Teks ---- */
+  --color-ink: #3d2417; /* headline & teks utama — netral hangat, kontras tinggi */
+  --color-muted: #7a6355; /* body, deskripsi */
+  --color-subtle: #9a8877; /* label, meta (≥18px) */
+  --color-on-dark: #f6f3ee;
+
+  /* ---- Garis — lebih halus, hampir tak terlihat ---- */
+  --color-border: #e9e3d9;
+  --color-border-strong: #d8cdbd;
+
+  /* ---- Primary — oranye (dipakai hemat: CTA & satu aksen) ---- */
+  --color-primary: #c8500f; /* aksen kunci, dipakai sedikit */
+  --color-primary-press: #b8420a; /* tombol berteks putih & teks oranye body */
+  --color-primary-strong: #9e3808; /* hover tombol primary */
+  --color-primary-soft: #f4e6da; /* latar badge / highlight lembut & kalem */
+  --color-primary-fg: #ffffff;
+
+  /* ---- Aksen sekunder ---- */
+  --color-amber: #efa00b;
+  --color-amber-strong: #d68f09;
+  --color-amber-fg: #591f0a; /* 5.97:1 di atas amber */
+  --color-info: #0267c1;
+  --color-info-hover: #0075c4;
+  --color-info-soft: #dcebf9;
+
+  --color-focus: #b8420a;
+
+  /* ---- Font families (di-wire dari next/font) ---- */
+  --font-display: var(--font-inter-tight), "Inter Tight", Inter, system-ui, sans-serif;
+  --font-sans: var(--font-inter), Inter, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, monospace;
+
+  /* ---- Radius ---- */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  /* ---- Container ---- */
+  --container-site: 1200px;
+
+  /* ---- Easing ---- */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Spasi & tipografi non-utility (dipakai lewat CSS var langsung) */
+:root {
+  --space-section: 128px;
+  --space-block: 64px;
+  --space-stack: 24px;
+  --gutter: 48px;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --space-section: 72px;
+    --space-block: 40px;
+    --space-stack: 20px;
+    --gutter: 20px;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Cegah scroll horizontal dari overshoot animasi masuk.
+     Navbar sticky berada di luar <main>, jadi tidak terpengaruh. */
+  main {
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--color-primary-soft);
+    color: var(--color-primary-press);
+  }
+
+  /* Focus ring oranye — terlihat jelas di latar krem */
+  :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Angka rupiah rata saat dibandingkan */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+}
+
+/* ---- Motif garis putus-putus (garis sobek nota) ---- */
+.nota-divider {
+  border: none;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    var(--color-border-strong) 0,
+    var(--color-border-strong) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  background-size: 16px 1px;
+  background-repeat: repeat-x;
+}
+
+/* ---- Wajib: hormati prefers-reduced-motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
