@@ -4,7 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ConsentBanner } from "@/components/layout/ConsentBanner";
-import { site } from "@/lib/content";
+import { site, homeFaq, coverageAreas } from "@/lib/content";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,12 +34,15 @@ export const metadata: Metadata = {
     template: "%s — Yuk Udin",
   },
   description:
-    "Tulis satu daftar belanja material, terima banyak penawaran dari toko terverifikasi di sekitar lokasi proyek. Bandingkan harga, stok, dan ongkos kirim di satu layar.",
+    "Yuk Udin — aplikasi pesan material bangunan online. Tulis satu daftar belanja, terima banyak penawaran dari toko terverifikasi di Jabodetabek, Bandung, dan sekitarnya. Bandingkan harga semen, besi, bata, keramik, stok, dan ongkos kirim di satu layar.",
   keywords: [
     "aplikasi pesan material bangunan",
     "cari supplier material bangunan",
+    "beli material bangunan online",
     "harga semen besi bata",
     "penawaran material bangunan",
+    "material bangunan Jabodetabek",
+    "supplier bahan bangunan Jakarta Bekasi Depok Bogor Tangerang Bandung",
   ],
   openGraph: {
     type: "website",
@@ -63,10 +66,14 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
+      "@id": "https://yukudin.id/#organization",
       name: "Yuk Udin",
       url: "https://yukudin.id",
       email: site.email,
+      description:
+        "Aplikasi pesan material bangunan yang menghubungkan pembeli dengan toko material terverifikasi.",
       address: { "@type": "PostalAddress", addressLocality: site.address, addressCountry: "ID" },
+      areaServed: coverageAreas.map((city) => ({ "@type": "City", name: city })),
     },
     {
       "@type": "SoftwareApplication",
@@ -74,6 +81,23 @@ const jsonLd = {
       applicationCategory: "BusinessApplication",
       operatingSystem: "Android, iOS",
       offers: { "@type": "Offer", price: "0", priceCurrency: "IDR" },
+    },
+    {
+      "@type": "Service",
+      name: "Pemesanan material bangunan online",
+      serviceType: "Marketplace material bangunan",
+      provider: { "@id": "https://yukudin.id/#organization" },
+      areaServed: coverageAreas.map((city) => ({ "@type": "City", name: city })),
+      description:
+        "Kirim satu daftar belanja material bangunan dan terima banyak penawaran dari toko terverifikasi untuk dibandingkan.",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: homeFaq.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };

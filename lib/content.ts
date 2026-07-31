@@ -65,16 +65,70 @@ export const howItWorks = [
   },
 ];
 
+/** Kategori material + contoh item (contoh item bagus untuk SEO long-tail). */
 export const categories = [
-  "Semen & agregat",
-  "Besi & baja",
-  "Bata & blok",
-  "Atap",
-  "Keramik",
-  "Cat",
-  "Sanitasi",
-  "Listrik",
+  { name: "Semen & agregat", examples: "Semen, pasir, split, batu koral" },
+  { name: "Besi & baja", examples: "Besi beton, hollow, wiremesh, plat" },
+  { name: "Bata & blok", examples: "Bata merah, batako, hebel, paving" },
+  { name: "Atap", examples: "Genteng, spandek, asbes, baja ringan" },
+  { name: "Keramik", examples: "Lantai, dinding, granit, nat" },
+  { name: "Cat", examples: "Cat tembok, kayu, besi, waterproofing" },
+  { name: "Sanitasi", examples: "Pipa, kloset, wastafel, kran" },
+  { name: "Listrik", examples: "Kabel, saklar, MCB, lampu" },
 ];
+
+/** Perbandingan "cara lama" vs Yuk Udin — untuk seksi visual & marketing. */
+export const comparison = {
+  old: {
+    title: "Cara lama",
+    points: [
+      "Telepon dan WA lima toko satu per satu",
+      "Harga beda-beda, susah dibandingkan",
+      "Catatan berserakan di banyak chat",
+      "Sampai lokasi, stok ternyata kosong",
+      "Habis waktu seharian cuma buat survei harga",
+    ],
+  },
+  neu: {
+    title: "Dengan Yuk Udin",
+    points: [
+      "Tulis satu daftar, kirim ke banyak toko sekaligus",
+      "Semua penawaran berjajar rapi di satu layar",
+      "Harga, stok, dan ongkir langsung terlihat",
+      "Vendor terverifikasi, rating jelas",
+      "Penawaran datang dalam hitungan jam",
+    ],
+  },
+};
+
+/**
+ * Cakupan wilayah untuk homepage (local/GEO SEO). Pre-launch: fokus
+ * Jabodetabek & sekitarnya, sebutkan "terus bertambah" — jujur, tanpa klaim palsu.
+ */
+export const coverageAreas = [
+  "Jakarta",
+  "Bekasi",
+  "Depok",
+  "Bogor",
+  "Tangerang",
+  "Tangerang Selatan",
+  "Bandung",
+  "Cikarang",
+];
+
+/**
+ * Blok konten SEO + GEO (generative engine optimization).
+ * Kalimat faktual & lugas: bagus untuk mesin pencari maupun mesin jawaban AI.
+ * Menyebut kata kunci lokal secara natural, bukan keyword stuffing.
+ */
+export const seoContent = {
+  title: "Cara pesan material bangunan online lewat Yuk Udin",
+  paragraphs: [
+    "Yuk Udin adalah aplikasi pesan material bangunan yang menghubungkan pemborong, kontraktor, mandor, dan pemilik rumah dengan toko material terverifikasi di sekitar lokasi proyek. Daripada menelepon banyak toko satu per satu, kamu cukup menulis satu daftar belanja — misalnya semen, besi beton, bata, keramik, hingga cat — lalu menerima beberapa penawaran harga sekaligus untuk dibandingkan.",
+    "Lewat satu permintaan, kamu bisa membandingkan harga material, ketersediaan stok, dan ongkos kirim dari beberapa supplier dalam satu layar. Setiap vendor sudah melewati verifikasi identitas dan izin usaha (KYB), sehingga transaksi material dengan nilai besar terasa lebih aman. Cocok untuk kebutuhan renovasi rumah maupun proyek konstruksi skala kecil hingga menengah.",
+    "Layanan Yuk Udin difokuskan untuk wilayah Jabodetabek dan sekitarnya — termasuk Jakarta, Bekasi, Depok, Bogor, Tangerang, dan Bandung — dan terus diperluas. Unduh aplikasinya untuk mulai membandingkan harga material bangunan dan memesan dari toko tepercaya di kotamu.",
+  ],
+};
 
 export const trustPoints = [
   {

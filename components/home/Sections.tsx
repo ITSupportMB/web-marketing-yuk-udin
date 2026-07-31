@@ -4,7 +4,6 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { IconBadge } from "@/components/ui/IconBadge";
 import {
   valuePillars,
-  problems,
   howItWorks,
   categories,
   trustPoints,
@@ -19,6 +18,7 @@ import {
   IconClock,
   IconHeadset,
   IconArrow,
+  IconTag,
 } from "@/components/ui/icons";
 import type { ReactNode } from "react";
 
@@ -27,7 +27,7 @@ const valueIcons = [IconList, IconInbox, IconCheck];
 
 export function ValueStrip() {
   return (
-    <Section tone="surface" className="!py-20">
+    <Section tone="surface" decor="glow-tr" className="!py-20">
       <Container>
         <RevealGroup className="grid gap-10 sm:grid-cols-3">
           {valuePillars.map((v, i) => {
@@ -50,40 +50,12 @@ export function ValueStrip() {
   );
 }
 
-/* 03 — Masalahnya */
-export function Problem() {
-  return (
-    <Section className="border-t border-[var(--color-border)]">
-      <Container>
-        <div className="max-w-[720px]">
-          <Reveal>
-            <Eyebrow>Kenapa ribet</Eyebrow>
-            <h2 className="font-display text-[34px] font-semibold leading-[1.06] tracking-[-0.025em] text-[var(--color-ink)] sm:text-[48px]">
-              Cari material bangunan masih terlalu melelahkan.
-            </h2>
-          </Reveal>
-          <RevealGroup className="mt-10 flex flex-col gap-5">
-            {problems.map((p, i) => (
-              <RevealItem
-                key={i}
-                className="flex gap-4 border-l-2 border-[var(--color-border-strong)] pl-5"
-              >
-                <p className="text-[18px] leading-relaxed text-[var(--color-muted)]">{p}</p>
-              </RevealItem>
-            ))}
-          </RevealGroup>
-        </div>
-      </Container>
-    </Section>
-  );
-}
-
 /* 04 — Cara kerja (3 langkah) */
 const stepIcons = [IconList, IconInbox, IconCheck];
 
 export function HowItWorks() {
   return (
-    <Section tone="surface" id="cara-kerja" className="border-t border-[var(--color-border)]">
+    <Section tone="surface" id="cara-kerja" decor="glow-br" className="border-t border-[var(--color-border)]">
       <Container>
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <Reveal className="max-w-[560px]">
@@ -131,23 +103,31 @@ export function HowItWorks() {
   );
 }
 
-/* 05 — Kategori material */
+/* 05 — Kategori material (kartu + contoh item = kaya kata kunci) */
 export function Categories() {
   return (
-    <Section className="border-t border-[var(--color-border)]">
+    <Section decor="glow-tl" className="border-t border-[var(--color-border)]">
       <Container>
         <Reveal className="max-w-[720px]">
           <Eyebrow>Kategori material</Eyebrow>
           <h2 className="font-display text-[34px] font-semibold leading-[1.06] tracking-[-0.025em] text-[var(--color-ink)] sm:text-[48px]">
             Dari pondasi sampai finishing.
           </h2>
+          <p className="mt-5 max-w-[560px] text-[18px] leading-relaxed text-[var(--color-muted)]">
+            Hampir semua kebutuhan proyek bisa kamu minta dalam satu daftar —
+            struktur, dinding, atap, sampai sentuhan akhir.
+          </p>
         </Reveal>
-        <RevealGroup className="mt-10 flex flex-wrap gap-3">
+        <RevealGroup className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
           {categories.map((cat) => (
-            <RevealItem key={cat}>
-              <span className="inline-flex items-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-3 text-[16px] text-[var(--color-ink)] transition-colors hover:border-[var(--color-border-strong)]">
-                {cat}
-              </span>
+            <RevealItem key={cat.name} as="article">
+              <div className="h-full rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-surface)] p-5 transition-colors hover:border-[var(--color-border-strong)]">
+                <span className="grid h-9 w-9 place-items-center rounded-[var(--radius-sm)] bg-[var(--color-primary-soft)] text-[var(--color-primary)]">
+                  <IconTag className="h-5 w-5" />
+                </span>
+                <h3 className="mt-4 text-[16px] font-semibold text-[var(--color-ink)]">{cat.name}</h3>
+                <p className="mt-1 text-[13px] leading-snug text-[var(--color-subtle)]">{cat.examples}</p>
+              </div>
             </RevealItem>
           ))}
         </RevealGroup>
@@ -161,7 +141,7 @@ const trustIcons = [IconShield, IconStar, IconClock, IconHeadset];
 
 export function Trust() {
   return (
-    <Section tone="surface" className="border-t border-[var(--color-border)]">
+    <Section tone="surface" decor="glow-bl" className="border-t border-[var(--color-border)]">
       <Container>
         <Reveal className="max-w-[720px]">
           <Eyebrow>Rasa aman</Eyebrow>
@@ -203,7 +183,7 @@ export function Trust() {
 /* 07 — Testimoni (statis, tidak berputar) */
 export function Testimonials() {
   return (
-    <Section className="border-t border-[var(--color-border)]">
+    <Section decor="glow-br" className="border-t border-[var(--color-border)]">
       <Container>
         <Reveal className="max-w-[720px]">
           <Eyebrow>Kata mereka</Eyebrow>
@@ -239,8 +219,8 @@ export function VendorStrip() {
     <Section className="!py-16">
       <Container>
         <Reveal>
-          <div className="flex flex-col items-start justify-between gap-6 rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface)] p-8 sm:flex-row sm:items-center sm:p-10">
-            <div>
+          <div className="flex flex-col items-start justify-between gap-6 overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-primary)]/25 bg-gradient-to-br from-[var(--color-primary-soft)] via-[var(--color-surface)] to-[var(--color-surface)] p-8 sm:flex-row sm:items-center sm:p-10">
+            <div className="flex-1">
               <h2 className="font-display text-[26px] font-medium tracking-[-0.015em] text-[var(--color-ink)] sm:text-[30px]">
                 Punya toko material?
               </h2>

@@ -11,7 +11,7 @@ const points = [
 
 export function NotaSection() {
   return (
-    <Section className="border-t border-[var(--color-border)]">
+    <Section decor="glow-bl" className="border-t border-[var(--color-border)]">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>

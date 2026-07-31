@@ -13,6 +13,14 @@ type Feature = {
   delay: number;
 };
 
+const dots = [
+  { pos: "left-[10%] top-[16%]", size: 10, color: "var(--color-primary)", range: -14, dur: 5 },
+  { pos: "right-[14%] top-[24%]", size: 7, color: "var(--color-amber)", range: 12, dur: 6 },
+  { pos: "right-[8%] bottom-[30%]", size: 12, color: "var(--color-primary-soft)", range: -10, dur: 5.5 },
+  { pos: "left-[16%] bottom-[22%]", size: 8, color: "var(--color-amber)", range: 12, dur: 6.5 },
+  { pos: "left-[46%] top-[6%]", size: 6, color: "var(--color-primary)", range: -10, dur: 5 },
+];
+
 const features: Feature[] = [
   { icon: IconInbox, label: "Banyak penawaran", pos: "left-0 top-6 sm:-left-4", delay: 0.25 },
   { icon: IconShield, label: "Vendor terverifikasi", pos: "right-0 top-20 sm:-right-6", delay: 0.4 },
@@ -48,6 +56,20 @@ export function MascotShowcase() {
             aria-hidden
             className="absolute left-1/2 top-1/2 z-0 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--color-border-strong)]/60"
           />
+
+          {/* Titik-titik dekoratif mengambang */}
+          {dots.map((d, i) => (
+            <m.span
+              key={i}
+              aria-hidden
+              className={`absolute z-0 rounded-full ${d.pos}`}
+              style={{ width: d.size, height: d.size, background: d.color }}
+              animate={reduce ? undefined : { y: [0, d.range, 0], opacity: [0.5, 1, 0.5] }}
+              transition={
+                reduce ? undefined : { duration: d.dur, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }
+              }
+            />
+          ))}
 
           {/* Maskot */}
           <m.div

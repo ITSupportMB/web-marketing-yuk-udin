@@ -1,7 +1,6 @@
 import { Hero } from "@/components/home/Hero";
 import {
   ValueStrip,
-  Problem,
   HowItWorks,
   Categories,
   Trust,
@@ -9,6 +8,9 @@ import {
   VendorStrip,
 } from "@/components/home/Sections";
 import { NotaSection } from "@/components/home/NotaSection";
+import { Comparison } from "@/components/home/Comparison";
+import { Coverage } from "@/components/home/Coverage";
+import { SeoContent } from "@/components/home/SeoContent";
 import { HomeFaq } from "@/components/home/HomeFaq";
 import { DownloadCta } from "@/components/home/DownloadCta";
 import { StickyCta } from "@/components/layout/StickyCta";
@@ -20,13 +22,15 @@ export default function HomePage() {
       <Hero />
       <ValueStrip />
       <NotaSection />
-      <Problem />
+      <Comparison />
       <HowItWorks />
       <Categories />
+      <Coverage />
       <Trust />
       <Testimonials />
       <VendorStrip />
       <HomeFaq />
+      <SeoContent />
       <DownloadCta />
       <StickyCta />
       <ScrollDepth />

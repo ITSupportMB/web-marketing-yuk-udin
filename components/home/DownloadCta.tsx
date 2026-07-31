@@ -13,20 +13,29 @@ export function DownloadCta() {
     <section className="bg-[var(--color-bg)] px-[var(--gutter)] pb-[var(--space-section)] pt-10">
       <Container>
         <Reveal>
-          <div className="relative mx-auto rounded-[var(--radius-lg)] bg-[var(--color-surface-ink)] px-6 pb-24 pt-28 text-center text-[var(--color-on-dark)] sm:px-12 sm:pt-24">
+          <div className="relative mx-auto  rounded-[var(--radius-lg)] bg-[var(--color-surface-ink)] px-6 pb-24 pt-28 text-center text-[var(--color-on-dark)] sm:px-12 sm:pt-24">
+            {/* Cahaya hangat di dalam kartu gelap supaya tidak datar */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(60% 70% at 50% -10%, rgba(239,160,11,0.22), transparent 60%), radial-gradient(50% 60% at 100% 100%, rgba(200,80,15,0.20), transparent 65%)",
+              }}
+            />
             {/* Maskot Udin melambai di atas kartu gelap */}
-            <div className="pointer-events-none absolute -top-16 left-1/2 z-10 -translate-x-1/2">
-              <Mascot width={150} />
+            <div className="pointer-events-none absolute -top-10 max-[450px]:-top-20 sm:-top-30 md:-top-40 left-1/2 z-10 -translate-x-1/2">
+              <Mascot width={300} />
             </div>
-            <h2 className="mx-auto max-w-[16ch] font-display text-[34px] font-semibold leading-[1.06] tracking-[-0.025em] sm:text-[48px]">
+            <h2 className="relative z-10 mx-auto max-w-[16ch] font-display text-[34px] font-semibold leading-[1.06] tracking-[-0.025em] sm:text-[48px]">
               Berhenti telepon lima toko cuma buat nanya harga.
             </h2>
-            <p className="mx-auto mt-5 max-w-[46ch] text-[17px] leading-relaxed text-[rgba(253,246,238,0.82)]">
+            <p className="relative z-10 mx-auto mt-5 max-w-[46ch] text-[17px] leading-relaxed text-[rgba(253,246,238,0.82)]">
               Unduh Yuk Udin, tulis daftar belanja pertamamu, dan biarkan penawaran
               yang datang ke kamu.
             </p>
 
-            <div className="mt-10 flex flex-col items-center gap-8">
+            <div className="relative z-10 mt-10 flex flex-col items-center gap-8">
               <a
                 href="https://play.google.com/store?utm_source=web&utm_medium=cta_closing"
                 target="_blank"

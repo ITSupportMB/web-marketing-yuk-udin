@@ -7,7 +7,7 @@ import { IconArrow } from "@/components/ui/icons";
 
 export function HomeFaq() {
   return (
-    <Section tone="surface" className="border-t border-[var(--color-border)]">
+    <Section tone="surface" decor="glow-tl" className="border-t border-[var(--color-border)]">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <Reveal>

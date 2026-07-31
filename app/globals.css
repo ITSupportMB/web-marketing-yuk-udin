@@ -118,6 +118,15 @@
   }
 }
 
+/* ---- Motif titik halus untuk latar seksi (mengurangi kesan datar) ---- */
+.pattern-dots {
+  background-image: radial-gradient(var(--color-border-strong) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 40%, transparent 78%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 40%, transparent 78%);
+  opacity: 0.5;
+}
+
 /* ---- Motif garis putus-putus (garis sobek nota) ---- */
 .nota-divider {
   border: none;
