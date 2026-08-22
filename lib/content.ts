@@ -11,7 +11,7 @@ export const site = {
   waMessage: "Halo Yuk Udin, saya mau tanya soal aplikasi pesan material.",
   email: "halo@yukudin.id",
   address: "Bekasi Timur, Jawa Barat",
-  playStoreUrl: "https://play.google.com/store?utm_source=web&utm_medium=cta",
+  playStoreUrl: "https://storage.googleapis.com/yukudin-apks/yuk-udin-latest.apk",
   appStoreUrl: "https://apps.apple.com/?utm_source=web&utm_medium=cta",
 };
 
