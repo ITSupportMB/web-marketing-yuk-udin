@@ -11,7 +11,7 @@ export const site = {
   waMessage: "Halo Yuk Udin, saya mau tanya soal aplikasi pesan material.",
   email: "halo@yukudin.id",
   address: "Bekasi Timur, Jawa Barat",
-  playStoreUrl: "https://storage.googleapis.com/yukudin-apks/yuk-udin-latest.apk",
+  playStoreUrl: "https://storage.googleapis.com/yukudin-apks/yuk-udin-v0.2.0-dev.17%2B63.apk",
   appStoreUrl: "https://apps.apple.com/?utm_source=web&utm_medium=cta",
 };
 
@@ -52,16 +52,19 @@ export const howItWorks = [
     no: "01",
     title: "Tulis daftar belanja",
     body: "Catat material dan volumenya seperti nota toko — sak, ton, kubik, batang. Tambahkan alamat kirim ke lokasi proyek.",
+    img: "/cara-kerja/c1.svg"
   },
   {
     no: "02",
     title: "Terima penawaran",
     body: "Toko-toko terverifikasi di sekitar lokasimu mengirim harga, stok, dan ongkos kirim. Semua masuk ke satu layar.",
+    img: "/cara-kerja/c2.svg"
   },
   {
     no: "03",
     title: "Pilih dan kirim",
     body: "Bandingkan harga sejajar, lihat rating vendor, pilih yang paling masuk akal. Material dikirim, riwayat tersimpan.",
+    img: "/cara-kerja/c3.svg"
   },
 ];
 
@@ -210,10 +213,10 @@ export const vendorBenefits = [
 ];
 
 export const vendorSteps = [
-  { no: "01", title: "Daftar & verifikasi", body: "Isi data toko dan unggah dokumen KYB lewat aplikasi." },
-  { no: "02", title: "Terima permintaan", body: "Permintaan material di sekitarmu masuk dengan detail lengkap." },
-  { no: "03", title: "Kirim penawaran", body: "Beri harga, stok, dan estimasi kirim. Pembeli membandingkan." },
-  { no: "04", title: "Menang & kirim", body: "Penawaran terpilih, material dikirim, transaksi tercatat." },
+  { no: "01", title: "Daftar & verifikasi", body: "Isi data toko dan unggah dokumen KYB lewat aplikasi.", img: "/cara-kerja/s1.svg" },
+  { no: "02", title: "Terima permintaan", body: "Permintaan material di sekitarmu masuk dengan detail lengkap.", img: "/cara-kerja/s2.svg" },
+  { no: "03", title: "Kirim penawaran", body: "Beri harga, stok, dan estimasi kirim. Pembeli membandingkan.", img: "/cara-kerja/s3.svg" },
+  { no: "04", title: "Menang & kirim", body: "Penawaran terpilih, material dikirim, transaksi tercatat.", img: "/cara-kerja/s4.svg" },
 ];
 
 export const vendorRequirements = [

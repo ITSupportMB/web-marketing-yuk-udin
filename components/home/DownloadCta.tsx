@@ -51,7 +51,8 @@ export function DownloadCta() {
                   className="qr-slot grid h-28 w-28 place-items-center rounded-[var(--radius-md)] border border-dashed border-[rgba(253,246,238,0.35)] bg-[rgba(253,246,238,0.06)] text-center font-mono text-[11px] uppercase tracking-[0.08em] text-[rgba(253,246,238,0.6)]"
                   aria-hidden
                 >
-                  QR<br />yukudin.id/app
+                <img src="/brand/qr-code.svg" alt="QR Code untuk download aplikasi" className="h-full w-full object-contain" />
+           
                 </div>
                 <div className="text-left">
                   <p className="text-sm text-[rgba(253,246,238,0.7)]">Buka di HP kamu</p>

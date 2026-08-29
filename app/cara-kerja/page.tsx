@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/cara-kerja" },
 };
 
-type Step = { no: string; title: string; body: string };
+type Step = { no: string; title: string; body: string, img: string };
 
 function Steps({ steps }: { steps: Step[] }) {
   return (
@@ -36,9 +36,9 @@ function Steps({ steps }: { steps: Step[] }) {
               <p className="mt-3 max-w-[52ch] text-[17px] leading-relaxed text-[var(--color-muted)]">
                 {s.body}
               </p>
-              <div className="mt-5 aspect-[16/10] max-w-md overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-surface-alt)]">
+              <div className="mt-5 aspect-auto overflow-hidden max-w-md rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-surface-alt)]">
                 <div className="grid h-full place-items-center font-mono text-xs uppercase tracking-[0.08em] text-[var(--color-subtle)]">
-                  Screenshot app · langkah {s.no}
+                  <img src={s.img} alt={`${s.title} - ${s.no}`} />
                 </div>
               </div>
             </div>
